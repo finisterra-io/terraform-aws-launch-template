@@ -71,18 +71,18 @@ variable "block_device_mappings" {
   description = "Specify volumes to attach to the instance besides the volumes specified by the AMI"
   type = list(object({
     device_name = string
-    ebs = list(object({
-      delete_on_termination = string
-      encrypted             = string
-      iops                  = number
-      kms_key_id            = string
-      snapshot_id           = string
-      throughput            = number
-      volume_size           = number
-      volume_type           = string
-    }))
-    no_device    = string
-    virtual_name = string
+    ebs = optional(list(object({
+      delete_on_termination = optional(string)
+      encrypted             = optional(string)
+      iops                  = optional(number)
+      kms_key_id            = optional(string)
+      snapshot_id           = optional(string)
+      throughput            = optional(number)
+      volume_size           = optional(number)
+      volume_type           = optional(string)
+    })))
+    no_device    = optional(string)
+    virtual_name = optional(string)
   }))
   default = []
 }
@@ -157,25 +157,25 @@ variable "enable_monitoring" {
 variable "network_interfaces" {
   description = "Customize network interfaces to be attached at instance boot time"
   type = list(object({
-    associate_carrier_ip_address = string
-    associate_public_ip_address  = string
-    delete_on_termination        = string
-    description                  = string
-    device_index                 = number
-    interface_type               = string
-    ipv4_address_count           = number
-    ipv4_addresses               = list(string)
-    ipv4_prefix_count            = number
-    ipv4_prefixes                = list(string)
-    ipv6_address_count           = number
-    ipv6_addresses               = list(string)
-    ipv6_prefix_count            = number
-    ipv6_prefixes                = list(string)
-    network_card_index           = number
-    network_interface_id         = string
-    private_ip_address           = string
-    security_groups              = list(string)
-    subnet_id                    = string
+    associate_carrier_ip_address = optional(string)
+    associate_public_ip_address  = optional(string)
+    delete_on_termination        = optional(string)
+    description                  = optional(string)
+    device_index                 = optional(number)
+    interface_type               = optional(string)
+    ipv4_address_count           = optional(number)
+    ipv4_addresses               = optional(list(string))
+    ipv4_prefix_count            = optional(number)
+    ipv4_prefixes                = optional(list(string))
+    ipv6_address_count           = optional(number)
+    ipv6_addresses               = optional(list(string))
+    ipv6_prefix_count            = optional(number)
+    ipv6_prefixes                = optional(list(string))
+    network_card_index           = optional(number)
+    network_interface_id         = optional(string)
+    private_ip_address           = optional(string)
+    security_groups              = optional(list(string))
+    subnet_id                    = optional(string)
   }))
   default = []
 }
