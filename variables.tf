@@ -217,12 +217,6 @@ variable "user_data" {
   default     = null
 }
 
-variable "security_groups" {
-  description = "A list of security group IDs to associate"
-  type        = list(string)
-  default     = []
-}
-
 variable "iam_instance_profile" {
   description = "IAM instance profile to associate"
   type        = list(any)
