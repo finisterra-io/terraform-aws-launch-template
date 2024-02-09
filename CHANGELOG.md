@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.2](https://github.com/finisterra-io/terraform-aws-launch-template/compare/v1.0.1...v1.0.2) (2024-02-09)
+
+
+### Bug Fixes
+
+* placement ([7f96a29](https://github.com/finisterra-io/terraform-aws-launch-template/commit/7f96a2950ddb018f25f2696795101c328d8dd651))
+
 ### [1.0.1](https://github.com/finisterra-io/terraform-aws-launch-template/compare/v1.0.0...v1.0.1) (2024-02-07)
 
 
