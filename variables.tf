@@ -183,8 +183,17 @@ variable "network_interfaces" {
 
 variable "placement" {
   description = "The placement of the instance"
-  type        = map(string)
-  default     = {}
+  type = object({
+    affinity                = optional(string)
+    availability_zone       = optional(string)
+    group_name              = optional(string)
+    host_id                 = optional(string)
+    tenancy                 = optional(string)
+    spread_domain           = optional(string)
+    partition_number        = optional(number)
+    host_resource_group_arn = optional(string)
+  })
+  default = {}
 }
 
 variable "private_dns_name_options" {
