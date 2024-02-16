@@ -156,7 +156,7 @@ resource "aws_launch_template" "this" {
   }
 
   dynamic "monitoring" {
-    for_each = var.enable_monitoring ? [true] : [false]
+    for_each = var.enable_monitoring != null ? var.enable_monitoring ? [true] : [false] : []
 
     content {
       enabled = monitoring.value
@@ -190,7 +190,7 @@ resource "aws_launch_template" "this" {
   }
 
   dynamic "placement" {
-    for_each = length(var.placement) > 0 ? [var.placement] : []
+    for_each = var.placement != null ? [var.placement] : []
 
     content {
       affinity                = try(placement.value.affinity, null)
@@ -234,5 +234,6 @@ resource "aws_launch_template" "this" {
 
   lifecycle {
     create_before_destroy = true
+    ignore_changes        = [latest_version]
   }
 }
