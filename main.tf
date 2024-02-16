@@ -190,7 +190,7 @@ resource "aws_launch_template" "this" {
   }
 
   dynamic "placement" {
-    for_each = var.placement !=null ? [var.placement] : []
+    for_each = var.placement != null ? [var.placement] : []
 
     content {
       affinity                = try(placement.value.affinity, null)
