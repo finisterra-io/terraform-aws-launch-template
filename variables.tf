@@ -151,7 +151,7 @@ variable "metadata_options" {
 variable "enable_monitoring" {
   description = "Enables/disables detailed monitoring"
   type        = bool
-  default     = false
+  default     = null
 }
 
 variable "network_interfaces" {
@@ -193,7 +193,7 @@ variable "placement" {
     partition_number        = optional(number)
     host_resource_group_arn = optional(string)
   })
-  default = {}
+  default = null
 }
 
 variable "private_dns_name_options" {
