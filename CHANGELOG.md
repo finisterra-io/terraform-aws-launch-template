@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.4](https://github.com/finisterra-io/terraform-aws-launch-template/compare/v1.0.3...v1.0.4) (2024-02-18)
+
+
+### Bug Fixes
+
+* drift ([89e8340](https://github.com/finisterra-io/terraform-aws-launch-template/commit/89e8340617d96b71b9446e2065c73b4c96a1b5f9))
+* drifts ([13615ae](https://github.com/finisterra-io/terraform-aws-launch-template/commit/13615ae437ac3e3f5e3d450e5fe338191acaa01a))
+
 ### [1.0.3](https://github.com/finisterra-io/terraform-aws-launch-template/compare/v1.0.2...v1.0.3) (2024-02-16)
 
 
