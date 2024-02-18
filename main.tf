@@ -194,6 +194,7 @@ resource "aws_launch_template" "this" {
       network_interface_id         = try(network_interfaces.value.network_interface_id, null)
       private_ip_address           = try(network_interfaces.value.private_ip_address, null)
       security_groups              = try(network_interfaces.value.security_groups, null)
+      subnet_id                    = try(network_interfaces.value.subnet_id, null) != null ? network_interfaces.value.subnet_id : try(network_interfaces.value.subnet_name, null) != null ? data.aws_subnet.default[network_interfaces.value.device_index].id : null
     }
   }
 
