@@ -36,7 +36,7 @@ resource "aws_launch_template" "this" {
       capacity_reservation_preference = try(capacity_reservation_specification.value.capacity_reservation_preference, null)
 
       dynamic "capacity_reservation_target" {
-        for_each = try([capacity_reservation_specification.value.capacity_reservation_target], [])
+        for_each = try(capacity_reservation_specification.value.capacity_reservation_target, [])
 
         content {
           capacity_reservation_id                 = try(capacity_reservation_target.value.capacity_reservation_id, null)
@@ -92,6 +92,14 @@ resource "aws_launch_template" "this" {
     }
   }
 
+  dynamic "hibernation_options" {
+    for_each = length(var.hibernation_options) > 0 ? [var.hibernation_options] : []
+
+    content {
+      configured = hibernation_options.value.configured
+    }
+  }
+
   dynamic "iam_instance_profile" {
     for_each = var.iam_instance_profile
     content {
@@ -109,7 +117,7 @@ resource "aws_launch_template" "this" {
       market_type = try(instance_market_options.value.market_type, null)
 
       dynamic "spot_options" {
-        for_each = try([instance_market_options.value.spot_options], [])
+        for_each = try(instance_market_options.value.spot_options, [])
 
         content {
           block_duration_minutes         = try(spot_options.value.block_duration_minutes, null)
@@ -186,6 +194,7 @@ resource "aws_launch_template" "this" {
       network_interface_id         = try(network_interfaces.value.network_interface_id, null)
       private_ip_address           = try(network_interfaces.value.private_ip_address, null)
       security_groups              = try(network_interfaces.value.security_groups, null)
+      subnet_id                    = try(network_interfaces.value.subnet_id, null) != null ? network_interfaces.value.subnet_id : try(network_interfaces.value.subnet_name, null) != null ? data.aws_subnet.default[network_interfaces.value.device_index].id : null
     }
   }
 

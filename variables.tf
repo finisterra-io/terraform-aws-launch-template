@@ -124,6 +124,12 @@ variable "enclave_options" {
   default     = {}
 }
 
+variable "hibernation_options" {
+  description = "The hibernation options for the instance"
+  type        = map(string)
+  default     = {}
+}
+
 variable "instance_market_options" {
   description = "The market (purchasing) option for the instance"
   type        = any
@@ -176,6 +182,7 @@ variable "network_interfaces" {
     private_ip_address           = optional(string)
     security_groups              = optional(list(string))
     subnet_id                    = optional(string)
+    subnet_name                  = optional(string)
   }))
   default = []
 }
