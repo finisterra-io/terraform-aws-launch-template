@@ -182,6 +182,7 @@ variable "network_interfaces" {
     private_ip_address           = optional(string)
     security_groups              = optional(list(string))
     subnet_id                    = optional(string)
+    subnet_name                  = optional(string)
   }))
   default = []
 }
