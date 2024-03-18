@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.5](https://github.com/finisterra-io/terraform-aws-launch-template/compare/v1.0.4...v1.0.5) (2024-03-18)
+
+
+### Bug Fixes
+
+* add tfsec ([e41007f](https://github.com/finisterra-io/terraform-aws-launch-template/commit/e41007fecce0d1f2eaae7c0be6e18b25777856a8))
+
 ### [1.0.4](https://github.com/finisterra-io/terraform-aws-launch-template/compare/v1.0.3...v1.0.4) (2024-02-18)
 
 
