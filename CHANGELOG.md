@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.6](https://github.com/finisterra-io/terraform-aws-launch-template/compare/v1.0.5...v1.0.6) (2024-03-20)
+
+
+### Bug Fixes
+
+* default variable ([7a8f281](https://github.com/finisterra-io/terraform-aws-launch-template/commit/7a8f281a671bb431e1f178ffdde667a243fda931))
+
 ### [1.0.5](https://github.com/finisterra-io/terraform-aws-launch-template/compare/v1.0.4...v1.0.5) (2024-03-18)
 
 
